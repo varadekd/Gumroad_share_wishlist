@@ -7,7 +7,7 @@ class UserController < ApplicationController
           return
         end
     
-        user = User.where(_id: BSON::ObjectId.from_string(user_id)).only(:username).first
+        user = User.where(_id: BSON::ObjectId.from_string(user_id)).first
     
         if user
           render json: { status: 'success', data: user }
