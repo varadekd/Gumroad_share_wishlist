@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Badge } from "flowbite-react";
+import { useSelector, useDispatch } from "react-redux";
+import { addRemoveValue } from "../store/counter";
 
 import {
   HiOutlineHeart,
@@ -7,33 +10,35 @@ import {
   HiHeart,
 } from "react-icons/hi";
 import { BiMoneyWithdraw } from "react-icons/bi";
-import { useState } from "react";
+// import { useState } from "react";
 import ProductImage from "./ProductImage";
 
 const ProductCard = ({ product }) => {
-  const [wishlist, setRange] = useState([]);
+  // const [wishlist, setRange] = useState([]);
+  const wishlist = useSelector((state) => state.wishlist.value)
+  const dispatch = useDispatch();
 
-  const addRemoveWishlist = (id) => {
-    const currentIndex = wishlist.indexOf(id);
-    if (currentIndex > -1) {
-      const updatedWishlist = wishlist.filter((itemId) => itemId !== id);
-      setRange(updatedWishlist);
-    } else {
-      const updatedWishlist = [...wishlist, id];
-      setRange(updatedWishlist);
-    }
-  };
+  // const addRemoveWishlist = (id) => {
+  //   const currentIndex = wishlist.indexOf(id);
+  //   if (currentIndex > -1) {
+  //     const updatedWishlist = wishlist.filter((itemId) => itemId !== id);
+  //     setRange(updatedWishlist);
+  //   } else {
+  //     const updatedWishlist = [...wishlist, id];
+  //     setRange(updatedWishlist);
+  //   }
+  // };
 
   return (
     <>
       <div className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
         <div className="relative mb-4">
           <div className="w-full h-48">
-            <ProductImage productID={product.id} />
+            <ProductImage productID={product._id} />
           </div>
           <div className="absolute top-2 right-14">
             <button
-              onClick={() => addRemoveWishlist(product.id)}
+              onClick={() => dispatch(addRemoveValue(product.id))}
               type="button"
               className="border font-medium rounded-full text-sm p-2 text-center inline-flex items-center"
             >

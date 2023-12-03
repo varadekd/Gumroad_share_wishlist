@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./store/counter";
+import whishlistReducer from "./store/wishlist";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    wishlist: whishlistReducer,
   },
 });
