@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Badge } from "flowbite-react";
 import { useSelector, useDispatch } from "react-redux";
-import { addRemoveValue } from "../store/counter";
+import { addRemoveValue } from "../store/wishlist";
 
 import {
   HiOutlineHeart,
