@@ -1,5 +1,6 @@
 import ProductCard from "../components/ProductCard";
-import { getDataFromApiAndCache } from "../util/api";
+import { getDataFromApiAndCache } from "../util/api"
+
 const Products = () => {
   const products = getDataFromApiAndCache("/products", true);
   console.log("How", products);

@@ -13,10 +13,11 @@ export const whishlistSlice = createSlice({
       console.log("state: ", state, action);
     },
     updateWishlist: (state, action) => {
-      state.whishlist = action.payload;
+      console.log("state: ", state, action);
+      // state.whishlist = action.payload;
     },
   },
 });
 
-export const { addRemoveValue, updateValue } = whishlistSlice.actions;
+export const { addRemoveValue, updateWishlist } = whishlistSlice.actions;
 export default whishlistSlice.reducer;
