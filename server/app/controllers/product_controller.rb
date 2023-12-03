@@ -1,7 +1,7 @@
 class ProductController < ApplicationController
     def get_products 
 
-        all_products = Product.only(:name, :creator, :price, :rating, :numberOfReviews)
+        all_products = Product.only(:name, :creator, :price, :rating, :numberOfReviews, :category)
         
         if all_products 
             render json: { status: 'success', data: all_products }
