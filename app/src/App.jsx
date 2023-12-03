@@ -1,16 +1,15 @@
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { updateWishlist } from "./store/wishlist";
 import { getDataFromApiAndCache } from "./util/api";
 
-const USERID = "656c0d5e7306f441560932ea";
-
 function App() {
+  const userID = useSelector((state) => state.wishlistStore.userID);
   const dispatch = useDispatch();
-  const userData = getDataFromApiAndCache(`/user/${USERID}`);
+  const userData = getDataFromApiAndCache(`/user/${userID}`);
 
-  if (userData && userData.isSuccess) {
+  if (userData && userData.success) {
     dispatch(updateWishlist(userData.data.data.wishlisted));
   }
 

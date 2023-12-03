@@ -3,6 +3,6 @@ import whishlistReducer from "./store/wishlist";
 
 export const store = configureStore({
   reducer: {
-    wishlist: whishlistReducer,
+    wishlistStore: whishlistReducer,
   },
 });

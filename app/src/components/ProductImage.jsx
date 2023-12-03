@@ -4,7 +4,7 @@ const ProductImage = ({ productID }) => {
   const [isImageLoading, setImageLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
-      console.log("productID", productID);
+      // console.log("productID", productID);
       setImageLoading(false);
     }, 5000);
   });

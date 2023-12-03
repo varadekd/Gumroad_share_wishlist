@@ -1,9 +1,8 @@
 import ProductCard from "../components/ProductCard";
-import { getDataFromApiAndCache } from "../util/api"
+import { getDataFromApiAndCache } from "../util/api";
 
 const Products = () => {
   const products = getDataFromApiAndCache("/products", true);
-  console.log("How", products);
   return (
     <>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
