@@ -1,30 +1,18 @@
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateValue } from "./store/wishlist";
+import { updateWishlist } from "./store/wishlist";
+import { getDataFromApiAndCache } from "./util/api";
+
+const USERID = "656c0d5e7306f441560932ea"
 
 function App() {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/user/656c0d5e7306f441560932ea")
-
-        if(!response.ok) {
-          throw new Error('Failed to fetch data')
-        }
-
-        const result = await response.json
-        dispatch(updateValue(result.data.wishlisted))
-      } catch (error) {
-        console.error('Error in fetching data: ' , error)
-      }
-    };
-
-    fetchUser()
-  }, [])
+  const userData = getDataFromApiAndCache(`/user/${USERID}`)
+  
+  if(userData && userData.isSuccess) {
+    dispatch(updateWishlist(userData.data.wishlisted))
+  }
 
   return (
     <>

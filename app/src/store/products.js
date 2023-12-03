@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    whishlist : [],
+    projects : [],
 }
 
-export const whishlistSlice = createSlice({
-    name : 'wishlist',
+export const projectSlice = createSlice({
+    name : 'projects',
     initialState,
     reducers: {
         addRemoveValue: (state, action) => {
             // Logic to add or remove goes here
             console.log("state: " , state , action)
         },
-        updateWishlist: (state, action) => {
+        updateValue: (state, action) => {
             state.whishlist = action.payload
         }
     }
