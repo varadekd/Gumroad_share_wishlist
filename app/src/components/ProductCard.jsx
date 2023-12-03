@@ -57,11 +57,11 @@ const ProductCard = ({ product }) => {
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden">
-            {product.name}
+            {product.productName}
           </h2>
 
           <p className="text-sm text-gray-600 mb-2 text-ellipsis overflow-hidden">
-            by: {product.creator}
+            by: {product.creatorName}
           </p>
         </div>
         <hr className="my-3" />
@@ -71,7 +71,7 @@ const ProductCard = ({ product }) => {
               <BiMoneyWithdraw />
             </div>
             <div>
-              <p> {product.price} </p>
+              <p> {product.rate} </p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ const ProductCard = ({ product }) => {
               <HiOutlineStar />
             </div>
             <div>
-              <p>{product.rating}</p>
+              <p>{product.starRating}</p>
             </div>
           </div>
         </div>
