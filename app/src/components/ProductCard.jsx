@@ -1,6 +1,11 @@
 import { Badge } from "flowbite-react";
 
-import { HiOutlineHeart, HiShare, HiOutlineStar , HiHeart } from "react-icons/hi";
+import {
+  HiOutlineHeart,
+  HiShare,
+  HiOutlineStar,
+  HiHeart,
+} from "react-icons/hi";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { useState } from "react";
 import ProductImage from "./ProductImage";
