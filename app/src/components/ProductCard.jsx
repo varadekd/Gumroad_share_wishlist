@@ -34,15 +34,15 @@ const ProductCard = ({ product }) => {
       <div className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
         <div className="relative mb-4">
           <div className="w-full h-48">
-            <ProductImage productID={product._id} />
+            <ProductImage productID={product._id.$oid} />
           </div>
           <div className="absolute top-2 right-14">
             <button
-              onClick={() => dispatch(addRemoveValue(product.id))}
+              onClick={() => dispatch(addRemoveValue(product._id.$oid))}
               type="button"
               className="border font-medium rounded-full text-sm p-2 text-center inline-flex items-center"
             >
-              {wishlist.includes(product.id) ? (
+              {wishlist.includes(product._id.$oid) ? (
                 <HiHeart className="text-red h-6 w-6" />
               ) : (
                 <HiOutlineHeart className="h-6 w-6" />
@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
         <div className="mb-4 flex flex-wrap gap-2">
-          {product.categoryChips.map((category, index) => (
+          {product.category.map((category, index) => (
             <Badge key={index} color="purple" size="sm">
               {category}
             </Badge>
@@ -67,11 +67,11 @@ const ProductCard = ({ product }) => {
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden">
-            {product.productName}
+            {product.name}
           </h2>
 
           <p className="text-sm text-gray-600 mb-2 text-ellipsis overflow-hidden">
-            by: {product.creatorName}
+            by: {product.creator}
           </p>
         </div>
         <hr className="my-3" />
@@ -81,7 +81,7 @@ const ProductCard = ({ product }) => {
               <BiMoneyWithdraw />
             </div>
             <div>
-              <p> {product.rate} </p>
+              <p> {product.price} </p>
             </div>
           </div>
 
@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
               <HiOutlineStar />
             </div>
             <div>
-              <p>{product.starRating}</p>
+              <p>{product.rating}</p>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ const Products = () => {
                 products.data.data.length > 0 ? (
                   <>
                     {products.data.data.map((product) => (
-                      <ProductCard key={product.id} product={product} />
+                      <ProductCard key={product._id.$oid} product={product} />
                     ))}
                   </>
                 ) : (
