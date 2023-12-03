@@ -6,7 +6,7 @@ class ProductController < ApplicationController
         if all_products 
             render json: { status: 'success', data: all_products }
         else 
-            render json: { status: 'error', message: "An unkown server side error occurred" }
+            render json: { status: 'error', message: "An unkown server side error occurred" }, status: :internal_server_error
         end
     end
 
