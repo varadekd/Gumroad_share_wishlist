@@ -29,7 +29,7 @@ export function getDataFromApiAndCache(endpoint, isCache = false) {
           setSuccess(true);
 
           if (isCache) {
-             localStorage.setItem(endpoint, JSON.stringify(apiData));
+            localStorage.setItem(endpoint, JSON.stringify(apiData));
           }
         }
       } catch (error) {

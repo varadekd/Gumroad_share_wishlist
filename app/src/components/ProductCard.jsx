@@ -15,7 +15,7 @@ import ProductImage from "./ProductImage";
 
 const ProductCard = ({ product }) => {
   // const [wishlist, setRange] = useState([]);
-  const wishlist = useSelector((state) => state.wishlist.value)
+  const wishlist = useSelector((state) => state.wishlist.value);
   const dispatch = useDispatch();
 
   // const addRemoveWishlist = (id) => {
