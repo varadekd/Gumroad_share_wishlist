@@ -10,13 +10,13 @@ import {
   HiHeart,
 } from "react-icons/hi";
 import { BiMoneyWithdraw } from "react-icons/bi";
-// import { useState } from "react";
+import { useState } from "react";
 import ProductImage from "./ProductImage";
 
 const ProductCard = ({ product }) => {
-  // const [wishlist, setRange] = useState([]);
-  const wishlist = useSelector((state) => state.wishlist.value);
-  const dispatch = useDispatch();
+  const [wishlist, setRange] = useState([]);
+  // const wishlist = useSelector((state) => state.wishlist.value);
+  // const dispatch = useDispatch();
 
   // const addRemoveWishlist = (id) => {
   //   const currentIndex = wishlist.indexOf(id);
