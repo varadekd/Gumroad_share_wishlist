@@ -52,4 +52,42 @@ class UserController < ApplicationController
             render json: { status: 'error', message: 'An unknown server side error occurred' }, status: :internal_server_error
         end
     end
+
+
+    def remove_whislist_product 
+        user_id = params[:userID]
+        product_id = params[:productID]
+
+        if user_id.blank? || !BSON::ObjectId.legal?(user_id)
+          render json: { status: 'error', message: 'Invalid userID' }, status: :unprocessable_entity
+          return
+        end
+
+        if product_id.blank? || !BSON::ObjectId.legal?(product_id)
+            render json: { status: 'error', message: 'Invalid Product ID' }, status: :unprocessable_entity
+            return
+          end
+
+        user = User.find(user_id)
+
+        if !user.present?
+            render json: { status: 'error', message: 'User not found' }, status: :not_found
+            return
+        end
+
+        new_wishlist = user.wishlisted || []
+
+        if !new_wishlist.include?(product_id)
+            render json: { status: 'error', message: 'Product is not part of wishlist, Unable to remove it' }, status: :unprocessable_entity
+            return
+        end
+
+        new_wishlist.delete(product_id)
+
+        if user.set(wishlisted: new_wishlist)
+            render json: { status: 'error', message: 'Product is removed from wishlist' }, status: :ok
+        else 
+            render json: { status: 'error', message: 'An unknown server side error occurred' }, status: :internal_server_error
+        end
+    end
 end
