@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import ProductImage from "./ProductImage";
 import { updateWishlist } from "../store/wishlist";
-import { getDataFromApiAndCache } from "../util/api";
+import { makeAPICall } from "../util/api";
 
 import {
   HiOutlineHeart,
@@ -24,21 +24,25 @@ const ProductCard = ({ product }) => {
   const addRemoveFromWishlist = async (productID) => {
     setIsLoading(true);
     const currentIndex = wishlist.indexOf(productID);
-    let updatedWishlist = [];
+    let updatedWishlist = wishlist;
     let success = false;
 
     try {
       if (currentIndex > 0) {
-        success = await addRemoveAPIcall(
+        success = await makeAPICall(
+          "PATCH",
           `/user/${userID}/removewhislist?productID=${productID}`,
+          "remove"
         );
 
         if (success) {
           updatedWishlist = wishlist.filter((itemId) => itemId !== productID);
         }
       } else {
-        success = await addRemoveAPIcall(
+        success = await makeAPICall(
+          "PATCH",
           `/user/${userID}/whislist?productID=${productID}`,
+          "add"
         );
 
         if (success) {
@@ -50,25 +54,6 @@ const ProductCard = ({ product }) => {
     } finally {
       dispatch(updateWishlist(updatedWishlist));
       setIsLoading(false);
-    }
-  };
-
-  const addRemoveAPIcall = async (endpoint, action) => {
-    try {
-      const response = await fetch(endpoint, {
-        method: "PATCH",
-      });
-
-      if (!response.ok) {
-        throw new Error(`Failed to perform ${action} action on wishlist`);
-      }
-      return true;
-    } catch (error) {
-      console.error(
-        `Error when performing ${action} action on wishlist:`,
-        error,
-      );
-      throw error;
     }
   };
 
@@ -90,7 +75,7 @@ const ProductCard = ({ product }) => {
                   <svg
                     aria-hidden="true"
                     role="status"
-                    class="inline h-6 w-6 text-blue animate-spin"
+                    className="inline h-6 w-6 text-blue animate-spin"
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

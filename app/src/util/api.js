@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+const baseURL = "http://localhost:3000";
 
 export function getDataFromApiAndCache(endpoint, isCache = false) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const baseURL = "http://localhost:3000";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,3 +45,22 @@ export function getDataFromApiAndCache(endpoint, isCache = false) {
 
   return { success, isLoading, data, error };
 }
+
+export const makeAPICall = async (method, endpoint, action) => {
+  try {
+    const response = await fetch(`${baseURL}${endpoint}`, {
+      method: method,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to perform ${action} action on wishlist`);
+    }
+    return true;
+  } catch (error) {
+    console.error(
+      `Error when performing ${action} action on wishlist:`,
+      error,
+    );
+    throw error;
+  }
+};
