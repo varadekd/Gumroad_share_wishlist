@@ -21,9 +21,6 @@ function App() {
   getUserData()
   }, []);
   
-
-  
-
   return (
     <>
       <div className="flex flex-col h-screen">

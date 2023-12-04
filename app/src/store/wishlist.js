@@ -9,10 +9,6 @@ export const wishlistSlice = createSlice({
   name: "wishlistStore",
   initialState,
   reducers: {
-    addRemoveValue: (state, action) => {
-      // Logic to add or remove goes here
-      console.log("state: ", state, action);
-    },
     updateWishlist: (state, action) => {
       state.wishlist = action.payload;
     },
