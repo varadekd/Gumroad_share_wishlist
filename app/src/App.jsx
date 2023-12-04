@@ -11,16 +11,16 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-  const getUserData = async () => {
-    const userData = await makeAPICall("GET" , `/user/${userID}` , "get user");
+    const getUserData = async () => {
+      const userData = await makeAPICall("GET", `/user/${userID}`, "get user");
 
-    if (userData && userData.success) {
-      dispatch(updateWishlist(userData.data.data.wishlisted));
-    }
-  }
-  getUserData()
+      if (userData && userData.success) {
+        dispatch(updateWishlist(userData.data.data.wishlisted));
+      }
+    };
+    getUserData();
   }, []);
-  
+
   return (
     <>
       <div className="flex flex-col h-screen">

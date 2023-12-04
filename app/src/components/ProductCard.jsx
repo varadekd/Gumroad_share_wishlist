@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
         apiRes = await makeAPICall(
           "PATCH",
           `/user/${userID}/removewhislist?productID=${productID}`,
-          "remove"
+          "remove",
         );
 
         if (apiRes.success) {
@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
         apiRes = await makeAPICall(
           "PATCH",
           `/user/${userID}/whislist?productID=${productID}`,
-          "add"
+          "add",
         );
 
         if (apiRes.success) {

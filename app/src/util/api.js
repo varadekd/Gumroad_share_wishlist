@@ -51,20 +51,16 @@ export const makeAPICall = async (method, endpoint, action) => {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to perform ${action} action on wishlist`);
+      throw new Error(`Failed to perform ${action} `);
     }
 
     const apiData = await response.json();
     return {
-      success : true,
-      data : apiData
+      success: true,
+      data: apiData,
     };
-    
   } catch (error) {
-    console.error(
-      `Error when performing ${action} action on wishlist:`,
-      error,
-    );
+    console.error(`Error when performing ${action} :`, error);
     throw error;
   }
 };
