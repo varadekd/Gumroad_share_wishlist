@@ -1,17 +1,28 @@
+//Imports
+import { useEffect } from "react";
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes";
 import { useSelector, useDispatch } from "react-redux";
 import { updateWishlist } from "./store/wishlist";
-import { getDataFromApiAndCache } from "./util/api";
+import { makeAPICall } from "./util/api";
 
 function App() {
   const userID = useSelector((state) => state.wishlistStore.userID);
   const dispatch = useDispatch();
-  const userData = getDataFromApiAndCache(`/user/${userID}`);
 
-  if (userData && userData.success) {
-    dispatch(updateWishlist(userData.data.data.wishlisted));
+  useEffect(() => {
+  const getUserData = async () => {
+    const userData = await makeAPICall("GET" , `/user/${userID}` , "get user");
+
+    if (userData && userData.success) {
+      dispatch(updateWishlist(userData.data.data.wishlisted));
+    }
   }
+  getUserData()
+  }, []);
+  
+
+  
 
   return (
     <>

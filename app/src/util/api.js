@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 const baseURL = "http://localhost:3000";
 
-export function getDataFromApiAndCache(endpoint, isCache = false) {
+export function getDataFromApiAndCache(endpoint) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,9 +28,7 @@ export function getDataFromApiAndCache(endpoint, isCache = false) {
           setData(apiData);
           setSuccess(true);
 
-          if (isCache) {
-            localStorage.setItem(endpoint, JSON.stringify(apiData));
-          }
+          localStorage.setItem(endpoint, JSON.stringify(apiData));
         }
       } catch (error) {
         setError(error);
@@ -55,7 +53,13 @@ export const makeAPICall = async (method, endpoint, action) => {
     if (!response.ok) {
       throw new Error(`Failed to perform ${action} action on wishlist`);
     }
-    return true;
+
+    const apiData = await response.json();
+    return {
+      success : true,
+      data : apiData
+    };
+    
   } catch (error) {
     console.error(
       `Error when performing ${action} action on wishlist:`,
