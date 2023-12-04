@@ -25,27 +25,27 @@ const ProductCard = ({ product }) => {
     setIsLoading(true);
     const currentIndex = wishlist.indexOf(productID);
     let updatedWishlist = wishlist;
-    let success = false;
+    let apiRes = {};
 
     try {
       if (currentIndex > 0) {
-        success = await makeAPICall(
+        apiRes = await makeAPICall(
           "PATCH",
           `/user/${userID}/removewhislist?productID=${productID}`,
           "remove"
         );
 
-        if (success) {
+        if (apiRes.success) {
           updatedWishlist = wishlist.filter((itemId) => itemId !== productID);
         }
       } else {
-        success = await makeAPICall(
+        apiRes = await makeAPICall(
           "PATCH",
           `/user/${userID}/whislist?productID=${productID}`,
           "add"
         );
 
-        if (success) {
+        if (apiRes.success) {
           updatedWishlist = [...wishlist, productID];
         }
       }
