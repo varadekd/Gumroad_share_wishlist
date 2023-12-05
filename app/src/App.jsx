@@ -23,9 +23,15 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col h-screen bg-neutral-800 text-white overflow-auto">
-        <div className="flex-1 m-2">
+      <div className="flex flex-col h-screen bg-neutral-800 text-white overflow-hidden">
+        <div className="h-16 bg-gray-800 flex items-center justify-center">
+          Header Content
+        </div>
+        <div className="flex-1 m-2 h-96  overflow-auto">
           <RouterProvider router={routes} />
+        </div>
+        <div className="h-12 bg-gray-800 flex items-center justify-center">
+          Footer Content
         </div>
       </div>
     </>
