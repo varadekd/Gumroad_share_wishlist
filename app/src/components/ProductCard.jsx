@@ -2,7 +2,7 @@
 
 import { Badge } from "flowbite-react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductImage from "./ProductImage";
 import { updateWishlist } from "../store/wishlist";
 import { makeAPICall } from "../util/api";
@@ -22,13 +22,22 @@ const ProductCard = ({ product }) => {
   const userID = useSelector((state) => state.wishlistStore.userID);
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
+  const [shareURL , setShareURL] = useState('')
+
+  useEffect(() => {
+    const generateShareUrl = () => {
+      const tempUrl = `https://twitter.com/intent/tweet?text=I%20found%20this%20amazing%20product%20on%20Gumroad%20,Go%20check%20this%20out&url=http://localhost:5173/product/${product._id.$oid}&via=gumroad`
+      setShareURL(tempUrl)
+    };
+
+    generateShareUrl()
+  }, [])
 
   const addRemoveFromWishlist = async (productID) => {
     setIsLoading(true);
     const currentIndex = wishlist.indexOf(productID);
     let updatedWishlist = wishlist;
     let apiRes = {};
-
     try {
       if (currentIndex > 0) {
         apiRes = await makeAPICall(
@@ -110,12 +119,14 @@ const ProductCard = ({ product }) => {
             </button>
           </div>
           <div className="absolute top-2 right-2">
-            <button
-              type="button"
+            <a
+              href={shareURL}
+              target="_blank"
+              rel="noreferrer"
               className="border font-medium rounded-full text-sm p-2 text-center inline-flex items-center"
             >
               <HiShare className="h-6 w-6" />
-            </button>
+            </a>
           </div>
         </div>
         <div className="mb-4 flex flex-wrap gap-2">
