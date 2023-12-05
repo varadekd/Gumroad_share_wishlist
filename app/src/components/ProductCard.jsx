@@ -6,6 +6,7 @@ import { useState } from "react";
 import ProductImage from "./ProductImage";
 import { updateWishlist } from "../store/wishlist";
 import { makeAPICall } from "../util/api";
+import { useNavigate } from 'react-router-dom';
 
 import {
   HiOutlineHeart,
@@ -16,6 +17,7 @@ import {
 import { BiMoneyWithdraw } from "react-icons/bi";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
   const wishlist = useSelector((state) => state.wishlistStore.wishlist);
   const userID = useSelector((state) => state.wishlistStore.userID);
   const dispatch = useDispatch();
@@ -57,9 +59,13 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const showProductDetails = (productID) => {
+    navigate(`/product/${productID}`);
+  }
+
   return (
     <>
-      <div className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
+      <div onClick={() => showProductDetails(product._id.$oid)} className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
         <div className="relative mb-4">
           <div className="w-full h-48">
             <ProductImage productID={product._id.$oid} />

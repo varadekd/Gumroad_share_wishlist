@@ -1,9 +1,8 @@
-import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-const Products = React.lazy(() => import("./pages/Products"));
-const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
-const Error = React.lazy(() => import("./pages/Error"));
+import Products from "./pages/Products"
+import ProductDetail from "./pages/ProductDetail"
+import Error from "./pages/Error"
 
 const router = createBrowserRouter([
   {
