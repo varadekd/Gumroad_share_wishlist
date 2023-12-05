@@ -1,0 +1,264 @@
+[{
+    "category": [
+      "Music",
+      "Art"
+    ],
+    "name": "How to Make Scenery",
+    "creator": "John",
+    "price": 10.99,
+    "rating": 4,
+    "summary": "Comprehensive guide to creating breathtaking scenery using art techniques.",
+    "description": "Explore the world of landscape painting with step-by-step tutorials and expert tips.",
+    "howToUse": [
+      "Follow the chapters sequentially to grasp foundational techniques.",
+      "Explore advanced methods to enhance your scenic creations."
+    ],
+    "features": [
+      "Step-by-step tutorials",
+      "Techniques for landscapes and natural elements",
+      "Tips on color blending and composition"
+    ],
+    "numberOfReviews": 12
+  },
+  {
+    "category": [
+      "E-book",
+      "Art"
+    ],
+    "name": "Painting Mastery",
+    "creator": "Alice",
+    "price": 12.49,
+    "rating": 3,
+    "summary": "Master the art of painting with expert guidance and practical exercises.",
+    "description": "Unlock your artistic potential through detailed painting techniques and creative exercises.",
+    "howToUse": [
+      "Practice brush techniques for different textures and effects.",
+      "Experiment with various mediums to expand your artistic style."
+    ],
+    "features": [
+      "Practical exercises for artists",
+      "Guidance on brush techniques and color theory",
+      "Inspiration for creative expression"
+    ],
+    "numberOfReviews": 10
+  },
+  {
+    "category": [
+      "Software",
+      "3-D"
+    ],
+    "name": "3D Modeling Pro",
+    "creator": "Michael",
+    "price": 8.99,
+    "rating": 5,
+    "summary": "Master 3D modeling with advanced software and expert guidance.",
+    "description": "Learn the intricacies of 3D modeling with industry-standard software and hands-on tutorials.",
+    "howToUse": [
+      "Explore basic shapes and structures to understand modeling fundamentals.",
+      "Practice advanced techniques to create complex 3D models."
+    ],
+    "features": [
+      "Introduction to 3D modeling tools",
+      "Advanced techniques for detailed models",
+      "Rendering and finalizing 3D creations"
+    ],
+    "numberOfReviews": 15
+  },
+  {
+    "category": [
+      "Music",
+      "3-D"
+    ],
+    "name": "Soundscapes in 3D",
+    "creator": "Emma",
+    "price": 15.99,
+    "rating": 4,
+    "summary": "Immerse yourself in 3D audio experiences and sound design.",
+    "description": "Explore the world of spatial audio and create immersive soundscapes in three dimensions.",
+    "howToUse": [
+      "Understand spatial audio concepts and techniques.",
+      "Experiment with audio placement for a realistic auditory experience."
+    ],
+    "features": [
+      "Spatial audio principles",
+      "Creating immersive sound environments",
+      "Mixing and mastering in 3D space"
+    ],
+    "numberOfReviews": 8
+  },
+  {
+    "category": [
+      "Art",
+      "E-book"
+    ],
+    "name": "Artistic E-Book Guide",
+    "creator": "David",
+    "price": 9.49,
+    "rating": 4,
+    "summary": "Unlock your artistic potential with this comprehensive e-book guide.",
+    "description": "Discover various artistic techniques and styles through detailed illustrations and instructions.",
+    "howToUse": [
+      "Explore different art styles and practice techniques.",
+      "Apply learned skills to create your unique artwork."
+    ],
+    "features": [
+      "Illustrated guides and tutorials",
+      "Techniques for different art mediums",
+      "Inspiration for artistic creativity"
+    ],
+    "numberOfReviews": 20
+  },
+  {
+    "category": [
+      "Music",
+      "Software"
+    ],
+    "name": "Digital Music Production",
+    "creator": "Sophia",
+    "price": 11.99,
+    "rating": 3,
+    "summary": "Master the art of music production using digital tools and software.",
+    "description": "Learn to produce music using industry-standard software and create your tracks.",
+    "howToUse": [
+      "Understand the basics of music production and software navigation.",
+      "Experiment with sound design and arrangement to create your unique music."
+    ],
+    "features": [
+      "Introduction to music production software",
+      "Sound design and arrangement techniques",
+      "Mixing and mastering your tracks"
+    ],
+    "numberOfReviews": 6
+  },
+  {
+    "category": [
+      "E-book",
+      "Software"
+    ],
+    "name": "Coding Essentials",
+    "creator": "Olivia",
+    "price": 13.99,
+    "rating": 5,
+    "summary": "Learn essential coding skills through this comprehensive e-book.",
+    "description": "Get started with coding fundamentals and progress to advanced topics with practical examples.",
+    "howToUse": [
+      "Start with the basics of programming languages.",
+      "Apply learned skills through coding exercises and projects."
+    ],
+    "features": [
+      "Fundamentals of programming",
+      "Examples and exercises for practice",
+      "Application of coding concepts"
+    ],
+    "numberOfReviews": 25
+  },
+  {
+    "category": [
+      "3-D",
+      "Art"
+    ],
+    "name": "Sculpting Foundations",
+    "creator": "William",
+    "price": 7.99,
+    "rating": 4,
+    "summary": "Master the art of sculpting with foundational techniques.",
+    "description": "Learn to sculpt various forms and shapes using different materials and tools.",
+    "howToUse": [
+      "Start with basic shapes and move towards complex forms.",
+      "Experiment with different sculpting tools and materials."
+    ],
+    "features": [
+      "Sculpting fundamentals",
+      "Techniques for different sculpting materials",
+      "Tips for detailed sculpting"
+    ],
+    "numberOfReviews": 18
+  },
+  {
+    "category": [
+      "Software",
+      "Music"
+    ],
+    "name": "Music Software Masterclass",
+    "creator": "Ethan",
+    "price": 14.49,
+    "rating": 5,
+    "summary": "Master music production software to create professional tracks.",
+    "description": "Unlock the full potential of music production software through in-depth tutorials and exercises.",
+    "howToUse": [
+      "Explore various functionalities of music production software.",
+      "Practice by creating your music compositions."
+    ],
+    "features": [
+      "In-depth tutorials for music software",
+      "Hands-on exercises and projects",
+      "Mixing and mastering techniques"
+    ],
+    "numberOfReviews": 30
+  },
+  {
+    "category": [
+      "Art",
+      "E-book"
+    ],
+    "name": "Digital Art Creation",
+    "creator": "Lily",
+    "price": 11.49,
+    "rating": 3,
+    "summary": "Unlock your creativity with digital art techniques and modern tools.",
+    "description": "Learn to create stunning digital art using software and advanced techniques.",
+    "howToUse": [
+      "Practice the provided exercises for a hands-on learning experience.",
+      "Follow along with video tutorials to master digital art creation."
+    ],
+    "features": [
+      "Digital drawing tools and software",
+      "Techniques for digital painting and illustration",
+      "Creating art in a digital medium"
+    ],
+    "numberOfReviews": 22
+  },
+  {
+    "category": [
+      "Music",
+      "Software"
+    ],
+    "name": "Beat Making Essentials",
+    "creator": "Noah",
+    "price": 10,
+    "rating": 4,
+    "summary": "Learn the essential techniques for creating beats and rhythms.",
+    "description": "Explore beat making techniques and software to craft unique and catchy rhythms.",
+    "howToUse": [
+      "Understand the basics of rhythm and beat structures.",
+      "Experiment with different instruments and samples to create your beats."
+    ],
+    "features": [
+      "Fundamentals of rhythm and beats",
+      "Using beat making software and instruments",
+      "Tips for creating unique beats"
+    ],
+    "numberOfReviews": 15
+  },
+  {
+    "category": [
+      "Software",
+      "E-book"
+    ],
+    "name": "Photoshop Mastery",
+    "creator": "Sophie",
+    "price": 18.99,
+    "rating": 5,
+    "summary": "Master Photoshop with expert guidance and practical examples.",
+    "description": "Unlock the power of Photoshop through detailed tutorials and creative exercises.",
+    "howToUse": [
+      "Learn the Photoshop interface and tools.",
+      "Practice editing and manipulating images to develop your skills."
+    ],
+    "features": [
+      "Photoshop interface and tools",
+      "Editing and manipulation techniques",
+      "Creative projects and exercises"
+    ],
+    "numberOfReviews": 28
+  }]

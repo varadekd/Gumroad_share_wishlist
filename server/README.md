@@ -10,14 +10,12 @@ The app folder contains Gumroad's user interface (UI) code.
 - **Product Image:** Serves images associated with products.
 - **Product Banner:** Provides banners or additional imagery related to products.
 
-For API structure please refer the format mentioned [here](), for sample data visit [here]()
-
 
 ### Setup installation
 1. Clone this repo using `git clone <repo_link>`
 2. Install required gems: `bundle install`
 3. Install MongoDB [or use mongo atlas]
-4. Fill the MongoDB with the data - you can find the sample data [here]()
+4. Fill the MongoDB with the data - you can find the sample data [here](../data)
 5. Update `config/mongoid.yml` with database and hosts. 
 6. Start the server: rails s
 
