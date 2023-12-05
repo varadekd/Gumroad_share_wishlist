@@ -7,7 +7,7 @@ import { makeAPICall } from "../util/api";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  let productData = {};
+  const [productData, setProductData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
@@ -16,7 +16,7 @@ const ProductDetail = () => {
     const getProductDetail = async () => {
       try {
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        productData = await makeAPICall(
+        const apiRes = await makeAPICall(
           "GET",
           `/product/${id}`,
           `get product detail for id: ${id}`,
@@ -25,6 +25,8 @@ const ProductDetail = () => {
         //   if (productData && productData.success) {
         //     dispatch(updateWishlist(productData.data.data.wishlisted));
         //   }
+        setProductData(apiRes);
+        console.log("We got product as: ", productData);
       } catch (err) {
         setErrorMessage(err.message);
       } finally {
@@ -43,25 +45,43 @@ const ProductDetail = () => {
         </>
       ) : (
         <>
-          {productData.isSuccess ? (
+          {productData && productData.success ? (
             <>
               {productData.data &&
               productData.data.data &&
               productData.data.data._id.$oid ? (
                 <>
-                  <div className="h-48 w-full border">
+                  <div>
+                    <h1 className="text-3xl font-semibold">
+                      {productData.data.data.name}
+                    </h1>
+                  </div>
+                  <div className="h-48 w-full my-3">
                     <ProductBanner productID={id} />
                   </div>
 
-                  <div className="flex flex-col sm:flex-row w-full border mt-3 h-4/5">
-                    <div className="w-full h-full border p-2 sm:w-3/10 sm:pl-3">
+                  <hr />
+                  
+                  <div className="flex flex-col sm:flex-row w-full mt-3 h-4/5 p-2">
+                    <div className="w-full h-full p-2 sm:w-3/10 sm:pl-3">
                       <div>
-                        <h4>Brief</h4>
-                        <div>Content goes here</div>
+                        <div className="mb-2">
+                          <h4 className="font-semibold mb-2">
+                            Product Summary
+                          </h4>
+                          <div>
+                            <p>{productData.data.data.summary}</p>
+                          </div>
+                        </div>
+
+                        <div className="my-2">
+                          <p>By: {productData.data.data.creator}</p>
+                        </div>
                       </div>
 
-                      {/* Actions */}
-                      <div className="flex w-full border flex-col justify-center items-center">
+                      <hr />
+
+                      <div className="flex w-full flex-col justify-center items-center">
                         <Button outline className="w-48 mt-3">
                           <HiShoppingCart className="mr-2 h-5 w-5" />
                           wishlist
@@ -74,32 +94,45 @@ const ProductDetail = () => {
                       </div>
                     </div>
 
-                    <div className="w-full h-full border p-2 sm:w-7/10 sm:pr-3 mb-3 sm:mb-0">
-                      {/* Right section */}
+                    <div className="w-full h-full border-l-2 p-2 sm:w-7/10 sm:pr-3 mb-3 sm:mb-0">
                       <div className="mb-6">
-                        {/* Description */}
-                        <h4>Description</h4>
-                        <div className="h-32 overflow-y-auto">
-                          {/* Content with fixed height and overflow-y scroll */}
-                          {/* Replace with actual content */}
+                        <h4 className="text-lg font-semibold">Description</h4>
+                        <div className="max-h-32 overflow-y-auto pl-3 mt-2">
+                          <p>{productData.data.data.description}</p>
                         </div>
                       </div>
 
-                      <div className="mb-6">
-                        {/* Features */}
-                        <h4>Features</h4>
-                        <div className="h-32 overflow-y-auto">
-                          {/* Content with fixed height and overflow-y scroll */}
-                          {/* Replace with actual content */}
+                      <hr />
+
+                      <div className="mb-6 mt-3">
+                        <h4 className="text-lg font-semibold">Features</h4>
+                        <div className="max-h-32 overflow-y-auto pl-3 mt-2">
+                          <ul>
+                            {productData.data.data.features.map(
+                              (feature, index) => (
+                                <li key={index}>
+                                  {feature} - {index}
+                                </li>
+                              ),
+                            )}
+                          </ul>
                         </div>
                       </div>
 
-                      <div>
-                        {/* How to use */}
-                        <h4>How to use</h4>
-                        <div className="h-32 overflow-y-auto">
-                          {/* Content with fixed height and overflow-y scroll */}
-                          {/* Replace with actual content */}
+                      <hr />
+
+                      <div className="mt-3">
+                        <h4 className="text-lg font-semibold"> How to use</h4>
+                        <div className="h-32 overflow-y-auto pl-3 mt-2">
+                          <ul>
+                            {productData.data.data.howToUse.map(
+                              (feature, index) => (
+                                <li key={index}>
+                                  {feature} - {index}
+                                </li>
+                              ),
+                            )}
+                          </ul>
                         </div>
                       </div>
                     </div>
