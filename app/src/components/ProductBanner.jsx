@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "flowbite-react";
 import { makeAPICall } from "../util/api";
+import { ErrorMessage } from "./shared/ErrorMessage";
 
 const ProductBanner = ({ productID }) => {
   const [bannerData, setBannerData] = useState(null);
@@ -61,7 +62,9 @@ const ProductBanner = ({ productID }) => {
             </>
           ) : (
             <>
-              <h1>Error - {errorMessage}</h1>
+              <div className="h-full">
+                <ErrorMessage message={errorMessage} />
+              </div>
             </>
           )}
         </>

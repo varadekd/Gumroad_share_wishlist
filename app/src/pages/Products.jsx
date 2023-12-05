@@ -1,4 +1,5 @@
 import ProductCard from "../components/ProductCard";
+import { ErrorMessage } from "../components/shared/ErrorMessage";
 import { Loader } from "../components/shared/Loader";
 import { getDataFromApiAndCache } from "../util/api";
 
@@ -31,7 +32,9 @@ const Products = () => {
               </>
             ) : (
               <>
-                <div>Error</div>
+                <div className="h-full">
+                  <ErrorMessage message={products.error.message} />
+                </div>
               </>
             )}
           </div>

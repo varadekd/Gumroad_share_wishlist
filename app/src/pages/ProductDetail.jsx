@@ -4,6 +4,7 @@ import ProductBanner from "../components/ProductBanner";
 import { makeAPICall } from "../util/api";
 import ProductDetailSection from "../components/ProductDetailSection";
 import { Loader } from "../components/shared/Loader";
+import { ErrorMessage } from "../components/shared/ErrorMessage";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -73,7 +74,9 @@ const ProductDetail = () => {
             </>
           ) : (
             <>
-              <h1>Error - {errorMessage}</h1>
+              <div className="h-full">
+                <ErrorMessage message={errorMessage} />
+              </div>
             </>
           )}
         </>

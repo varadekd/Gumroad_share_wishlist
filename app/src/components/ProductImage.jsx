@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { makeAPICall } from "../util/api";
+import { ErrorMessage } from "./shared/ErrorMessage";
 
 const ProductImage = ({ productID }) => {
   const [thumbnailData, setThumbnailData] = useState(null);
@@ -56,7 +57,7 @@ const ProductImage = ({ productID }) => {
           ) : (
             <>
               <div className="h-full flex items-end">
-                <p>Error - {errorMessage}</p>
+                <ErrorMessage message={errorMessage} />
               </div>
             </>
           )}
