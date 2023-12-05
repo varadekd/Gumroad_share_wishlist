@@ -10,6 +10,7 @@ const ProductDetail = () => {
   const [productData, setProductData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  
   useEffect(() => {
     setIsLoading(true);
 
@@ -22,11 +23,8 @@ const ProductDetail = () => {
           `get product detail for id: ${id}`,
         );
 
-        //   if (productData && productData.success) {
-        //     dispatch(updateWishlist(productData.data.data.wishlisted));
-        //   }
         setProductData(apiRes);
-        console.log("We got product as: ", productData);
+
       } catch (err) {
         setErrorMessage(err.message);
       } finally {
@@ -61,7 +59,7 @@ const ProductDetail = () => {
                   </div>
 
                   <hr />
-                  
+
                   <div className="flex flex-col sm:flex-row w-full mt-3 h-4/5 p-2">
                     <div className="w-full h-full p-2 sm:w-3/10 sm:pl-3">
                       <div>
