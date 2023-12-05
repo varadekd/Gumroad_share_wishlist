@@ -128,7 +128,7 @@ const ProductCard = ({ product }) => {
             {product.name}
           </h2>
 
-          <p className="text-sm text-gray-600 mb-2 text-ellipsis overflow-hidden">
+          <p className="text-sm mb-2 text-ellipsis overflow-hidden">
             by: {product.creator}
           </p>
         </div>

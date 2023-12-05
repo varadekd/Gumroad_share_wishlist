@@ -23,8 +23,9 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen bg-neutral-800 text-white overflow-auto">
         <div className="flex-1 border m-2">
+          <h1>GUMROAD </h1>
           <RouterProvider router={routes} />
         </div>
       </div>
