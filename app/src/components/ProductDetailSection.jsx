@@ -136,8 +136,8 @@ const ProductDetailSection = ({ productData }) => {
 
         <div className="mb-6 mt-3">
           <h4 className="text-lg font-semibold">Features</h4>
-          <div className="max-h-32 overflow-y-auto pl-3 mt-2">
-            <ul>
+          <div className="max-h-32 overflow-y-auto pl-6 mt-2">
+            <ul className="list-disc">
               {productData.data.features.map((feature, index) => (
                 <li key={index}>
                   {feature} - {index}
@@ -151,8 +151,8 @@ const ProductDetailSection = ({ productData }) => {
 
         <div className="mt-3">
           <h4 className="text-lg font-semibold"> How to use</h4>
-          <div className="h-32 overflow-y-auto pl-3 mt-2">
-            <ul>
+          <div className="h-32 overflow-y-auto pl-6 mt-2">
+            <ul className="list-disc">
               {productData.data.howToUse.map((feature, index) => (
                 <li key={index}>
                   {feature} - {index}
