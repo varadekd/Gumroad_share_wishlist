@@ -7,7 +7,7 @@ import ProductImage from "./ProductImage";
 import { updateWishlist } from "../store/wishlist";
 import { makeAPICall } from "../util/api";
 import { useNavigate } from 'react-router-dom';
-
+import { IconContext } from "react-icons";
 import {
   HiOutlineHeart,
   HiShare,
@@ -65,7 +65,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <div onClick={() => showProductDetails(product._id.$oid)} className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
+      <div className="border border-gray-300 rounded-md shadow-md p-4 w-72 h-96">
         <div className="relative mb-4">
           <div className="w-full h-48">
             <ProductImage productID={product._id.$oid} />
@@ -99,7 +99,10 @@ const ProductCard = ({ product }) => {
               ) : (
                 <>
                   {wishlist.includes(product._id.$oid) ? (
-                    <HiHeart className="text-red h-6 w-6" />
+                    <IconContext.Provider value={{ className: "text-red-500" }}>
+
+                    <HiHeart className="h-6 w-6" />
+                    </IconContext.Provider>
                   ) : (
                     <HiOutlineHeart className="h-6 w-6" />
                   )}
@@ -123,8 +126,8 @@ const ProductCard = ({ product }) => {
             </Badge>
           ))}
         </div>
-        <div>
-          <h2 className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden">
+        <div onClick={() => showProductDetails(product._id.$oid)} className="cursor-pointer">
+          <h2 className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden" title="Click to show details">
             {product.name}
           </h2>
 
