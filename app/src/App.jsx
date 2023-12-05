@@ -25,13 +25,19 @@ function App() {
     <>
       <div className="flex flex-col h-screen bg-neutral-800 text-white overflow-hidden">
         <div className="h-16 bg-gray-800 flex items-center justify-center">
-          Header Content
+          This a demo for Gumroad hiring challenge
         </div>
         <div className="flex-1 m-2 h-96  overflow-auto">
           <RouterProvider router={routes} />
         </div>
         <div className="h-12 bg-gray-800 flex items-center justify-center">
-          Footer Content
+          Project created by 
+          <a className="mx-2" href="https://github.com/varadekd">
+            Kushagra Varade
+          </a> the full code can be found 
+          <a className="mx-2" href="https://github.com/varadekd/Gumroad_share_wishlist">
+            here
+          </a>
         </div>
       </div>
     </>
