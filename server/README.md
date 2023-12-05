@@ -17,7 +17,7 @@ The app folder contains Gumroad's user interface (UI) code.
 3. Install MongoDB [or use mongo atlas]
 4. Fill the MongoDB with the data - you can find the sample data [here](../data)
 5. Update `config/mongoid.yml` with database and hosts. 
-6. Start the server: rails s
+6. Start the server: `rails s`
 
 
 ### Tech used
