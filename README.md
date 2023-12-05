@@ -11,7 +11,7 @@ This repository includes enhancements for Gumroad, introducing two vital feature
 
 ### How it benefits Gumroad
 
-- **Wishlist: ** Increases user engagement by allowing them to curate a list of products of interest.
+- **Wishlist:** Increases user engagement by allowing them to curate a list of products of interest.
 - **Social Media Sharing:** Amplifies product exposure, potentially leading to increased sales and community growth.
 
 ### Architecture
