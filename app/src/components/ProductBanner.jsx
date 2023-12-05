@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Carousel } from "flowbite-react";
 import { makeAPICall } from "../util/api";
 import { ErrorMessage } from "./shared/ErrorMessage";
+import { NoData } from "./shared/NoData";
 
 const ProductBanner = ({ productID }) => {
   const [bannerData, setBannerData] = useState(null);
@@ -56,7 +57,9 @@ const ProductBanner = ({ productID }) => {
                 </>
               ) : (
                 <>
-                  <h1>No data found</h1>
+                  <div className="h-full">
+                    <NoData />
+                  </div>
                 </>
               )}
             </>

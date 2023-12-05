@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { makeAPICall } from "../util/api";
 import { ErrorMessage } from "./shared/ErrorMessage";
+import { NoData } from "./shared/NoData";
 
 const ProductImage = ({ productID }) => {
   const [thumbnailData, setThumbnailData] = useState(null);
@@ -50,7 +51,9 @@ const ProductImage = ({ productID }) => {
                 </>
               ) : (
                 <>
-                  <h1>No data found</h1>
+                  <div className="h-full">
+                    <NoData />
+                  </div>
                 </>
               )}
             </>

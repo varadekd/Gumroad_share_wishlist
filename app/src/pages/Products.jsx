@@ -1,6 +1,7 @@
 import ProductCard from "../components/ProductCard";
 import { ErrorMessage } from "../components/shared/ErrorMessage";
 import { Loader } from "../components/shared/Loader";
+import { NoData } from "../components/shared/NoData";
 import { getDataFromApiAndCache } from "../util/api";
 
 const Products = () => {
@@ -26,7 +27,9 @@ const Products = () => {
                   </>
                 ) : (
                   <>
-                    <h1>No data</h1>
+                    <div className="h-full">
+                      <NoData />
+                    </div>
                   </>
                 )}
               </>

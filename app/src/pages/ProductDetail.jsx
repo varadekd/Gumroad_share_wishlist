@@ -5,6 +5,7 @@ import { makeAPICall } from "../util/api";
 import ProductDetailSection from "../components/ProductDetailSection";
 import { Loader } from "../components/shared/Loader";
 import { ErrorMessage } from "../components/shared/ErrorMessage";
+import { NoData } from "../components/shared/NoData";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -68,7 +69,9 @@ const ProductDetail = () => {
                 </>
               ) : (
                 <>
-                  <h1>No data</h1>
+                  <div className="h-full">
+                    <NoData />
+                  </div>
                 </>
               )}
             </>
