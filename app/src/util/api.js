@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 const baseURL = "http://localhost:3000";
 
-export function getDataFromApiAndCache(endpoint) {
+export const getDataFromApiAndCache = (endpoint) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
