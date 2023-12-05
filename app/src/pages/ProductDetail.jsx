@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ProductBanner from "../components/ProductBanner";
 import { makeAPICall } from "../util/api";
 import ProductDetailSection from "../components/ProductDetailSection";
+import { Loader } from "../components/shared/Loader";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -35,9 +36,11 @@ const ProductDetail = () => {
 
   return (
     <div className="mx-auto border h-full max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      {isLoading ? (
+      {!isLoading ? (
         <>
-          <h1>Loading</h1>
+          <div className="flex items-center justify-center">
+            <Loader />
+          </div>
         </>
       ) : (
         <>
