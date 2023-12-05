@@ -6,7 +6,7 @@ import { useState } from "react";
 import ProductImage from "./ProductImage";
 import { updateWishlist } from "../store/wishlist";
 import { makeAPICall } from "../util/api";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { IconContext } from "react-icons";
 import {
   HiOutlineHeart,
@@ -61,7 +61,7 @@ const ProductCard = ({ product }) => {
 
   const showProductDetails = (productID) => {
     navigate(`/product/${productID}`);
-  }
+  };
 
   return (
     <>
@@ -100,8 +100,7 @@ const ProductCard = ({ product }) => {
                 <>
                   {wishlist.includes(product._id.$oid) ? (
                     <IconContext.Provider value={{ className: "text-red-500" }}>
-
-                    <HiHeart className="h-6 w-6" />
+                      <HiHeart className="h-6 w-6" />
                     </IconContext.Provider>
                   ) : (
                     <HiOutlineHeart className="h-6 w-6" />
@@ -126,8 +125,14 @@ const ProductCard = ({ product }) => {
             </Badge>
           ))}
         </div>
-        <div onClick={() => showProductDetails(product._id.$oid)} className="cursor-pointer">
-          <h2 className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden" title="Click to show details">
+        <div
+          onClick={() => showProductDetails(product._id.$oid)}
+          className="cursor-pointer"
+        >
+          <h2
+            className="text-lg font-semibold mb-2 text-ellipsis overflow-hidden"
+            title="Click to show details"
+          >
             {product.name}
           </h2>
 

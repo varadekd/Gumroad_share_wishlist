@@ -10,7 +10,7 @@ const ProductDetail = () => {
   const [productData, setProductData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   useEffect(() => {
     setIsLoading(true);
 
@@ -24,7 +24,6 @@ const ProductDetail = () => {
         );
 
         setProductData(apiRes);
-
       } catch (err) {
         setErrorMessage(err.message);
       } finally {
